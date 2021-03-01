@@ -1,0 +1,7 @@
+
+BUILD_CODE = 201902250000
+VERSION = 4.40.10
+BUNDLE_ID = com.huochaoduo.driver
+APP_DISPLAY_NAME = 好伙伴司机端
+
+

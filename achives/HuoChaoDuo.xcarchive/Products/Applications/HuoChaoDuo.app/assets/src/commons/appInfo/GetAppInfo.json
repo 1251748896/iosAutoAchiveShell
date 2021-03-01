@@ -1,0 +1,148 @@
+{
+    "app": {
+        "companyEmail": "",
+        "companyAddress": "",
+        "serivceTel": "",
+        "weixin": "",
+        "isHasShop": false,
+        "copyright": ""
+    },
+    "reg": {
+        "password": {
+            "regex": "/^[a-zA-Z0-9]\\w{5,17}$/",
+            "message": "密码格式错误"
+        },
+        "newPassword": {
+            "regex": "/^[a-zA-Z0-9]\\w{5,17}$/",
+            "message": "新密码格式错误"
+        },
+        "oldPassword": {
+            "regex": "/^[a-zA-Z0-9]\\w{5,17}$/",
+            "message": "旧密码格式错误"
+        },
+        "surePassword": {
+            "regex": "/^[a-zA-Z0-9]\\w{5,17}$/",
+            "message": "确认密码格式错误"
+        },
+        "checkInt": {
+            "regex": "/^[0-9]*$/",
+            "message": "必须是整数"
+        },
+        "recommendCode": {
+            "regex": "/^[0-9]{4}$/",
+            "message": "推广码错误"
+        },
+        "email": {
+            "regex": "/^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/",
+            "message": "邮箱格式错误"
+        },
+        "payPassword": {
+            "regex": "/^[0-9]{6}$/",
+            "message": "支付密码格式错误"
+        },
+        "pfUser": {
+            "regex": "/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{3,32}$/",
+            "message": "浦发账号格式错误"
+        },
+        "checkIdCardNum": {
+            "regex": "/^[0-9xX]{0,18}$/",
+            "message": "身份证格式错误"
+        },
+        "mobileNo": {
+            "regex": "^1[3456789][0-9]{9}$",
+            "message": "请输入正确的手机号"
+        },
+        "idCardNo": {
+            "regex": "(^\\d{18}$)|(^\\d{17}(\\d|X|x)$)",
+            "message": "请输入正确的身份证号"
+        },
+        "bankCardNo": {
+            "regex": "/^\\d{1,30}$/",
+            "message": "银行卡号错误"
+        },
+        "chineseText": {
+            "regex": "^[\u4e00-\u9fa5]{0,}$",
+            "message": "请输入1个以上中文"
+        },
+        "validCode": {
+            "regex": "^[0-9]{3,7}$",
+            "message": "请输入3-7位数字"
+        },
+        "plateNumber": {
+            "regex": "^([京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[a-zA-Z](([DF]((?![IO])[a-zA-Z0-9](?![IO]))[0-9]{4})|([0-9]{5}[DF]))|[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1})$",
+            "message": "请输入正确的车牌号"
+        },
+        "workQualificationNo": {
+            "regex": "^[a-zA-Z0-9]{2,20}$",
+            "message": "请输入2-20位数字或字母"
+        },
+        "transportNoForDriver": {
+            "regex": "^[a-zA-Z0-9]{1,20}$",
+            "message": "请输入1-20位数字或字母司机道路运输证"
+        },
+        "transportNoForEnterpirse": {
+            "regex": "^[a-zA-Z0-9]{1,20}$",
+            "message": "请输入1-20位数字或字母企业道路运输证"
+        },
+        "socialCreditCode": {
+            "regex": "^[a-zA-Z0-9]{1,20}$",
+            "message": "请输入1-20位数字或字母"
+        },
+        "signBillCode": {
+            "regex": "^\\w{0,15}$",
+            "message": "请输入0-15位数字/字母/符号"
+        },
+        "contactNumber": {
+            "regex": "^\\d{7,15}$",
+            "message": "请输入7-15位数字"
+        },
+        "numTwoMax99": {
+            "regex": "/^[0-9]{1,2}([.]{1}[0-9]{0,2})?$/",
+            "message": "最多2小数"
+        },
+        "numTwoMax9999": {
+            "regex": "/^[0-9]{1,4}([.]{1}[0-9]{0,2})?$/",
+            "message": "最多2小数"
+        },
+        "drivingCertificateNumber": {
+            "regex": "/^[a-zA-Z0-9]{1,50}$/",
+            "message": "行驶证档案编号错误"
+        },
+        "natureOfUsage": {
+            "regex": "/^[a-zA-Z0-9\\u4e00-\\u9fa5]{1,20}$/",
+            "message": "车辆使用性质错误"
+        },
+        "engineNo": {
+            "regex": "/^[a-zA-Z0-9]{1,50}$/",
+            "message": "发动机号码错误"
+        },
+        "vin": {
+            "regex": "/^[a-zA-Z0-9]{1,20}$/",
+            "message": "车辆识别代号错误"
+        },
+        "certificationAuthority": {
+            "regex": "/^[\\u4e00-\\u9fa5()a-zA-Z0-9]{2,128}$/",
+            "message": "发证机关错误"
+        },
+        "fileNumber": {
+            "regex": "/^[a-zA-Z0-9]{1,20}$/",
+            "message": "档案编号错误"
+        },
+        "userName": {
+            "regex": "/^[0-9a-zA-Z·\\u4e00-\\u9fa5]{2,30}$/",
+            "message": "姓名错误"
+        },
+        "belonger": {
+            "regex": "/^[a-zA-Z0-9\\u4e00-\\u9fa5]{2,128}$/",
+            "message": "所有人错误"
+        },
+        "carryCapacity": {
+            "regex": "/^[1234567890.]{1,10}?$/",
+            "message": "车辆载重错误"
+        },
+        "chineseName": {
+            "regex": "/^[\u0391-\uFFE5·•]{2,20}$/",
+            "message": "姓名格式错误"
+        }
+    }
+}
