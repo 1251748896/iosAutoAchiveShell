@@ -28,13 +28,20 @@ teamId="6PU7HJG232"
 
 projectName="HuoChaoDuo"
 
+# 脚本文件夹（ios_auto_achive）和RN代码文件夹（app），最好在平级目录（在同一个文件夹当中）
+
+desktopPath="/Users/jiangbo/Desktop"
+ios_auto_achive="${desktopPath}/ios_auto_achive"
+RNPath="${desktopPath}/app"
 # ios工程目录
-iosPorjectPath="/Users/jiangbo/Desktop/app/ios"
+iosPorjectPath="${RNPath}/ios"
 # achive的路径
-achiveDirPath="/Users/jiangbo/Desktop/ios_auto_achive/achives"
-exportAchivePath="${achiveDirPath}/${projectName}"
+achiveDirPath="${ios_auto_achive}/achives"
 # ipa的路径
-exportIpaPath="/Users/jiangbo/Desktop/ios_auto_achive/ipas"
+exportIpaPath="${ios_auto_achive}/ipas"
+
+exportAchivePath="${achiveDirPath}/${projectName}"
+
 # appStore的ipa配置的路径
 ExportOptionsPath=""
 if [ ${ipaType} == ${appstore} ]
@@ -43,20 +50,24 @@ else
 ExportOptionsPath="adhocExportOption"
 fi
 
-exportOptionsConfig="/Users/jiangbo/Desktop/ios_auto_achive/exportOption/${ExportOptionsPath}/ExportOptions.plist"
-
+exportOptionsConfig="${ios_auto_achive}/exportOption/${ExportOptionsPath}/ExportOptions.plist"
 
 # 调整打包配置文件
 ./fix_export_option.sh ${kehuTeamId}
+echo "调整打包配置"
 
 # 清空achives和ipas
 ./clean_data.sh ${achiveDirPath} ${exportIpaPath}
+echo "清空上次打包文件"
 
 
 if [ ${appId} != ${kehuAppId} ]
 then 
 echo "替换客户账号和包名"
 ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
+else
+# 如果是或超多，则自动调整git分支
+./fix_branch.sh ${RNPath} ${role}
 fi
 
 ./export_achive.sh ${achive_mode} ${projectName} ${exportAchivePath} ${iosPorjectPath}
