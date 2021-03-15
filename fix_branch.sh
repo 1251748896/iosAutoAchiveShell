@@ -7,10 +7,10 @@ cd ${RNPath}
 
 if [ ${role} == "logistics" ]
 then 
-git checkout logistics-dev
+git checkout publish-logistics-4.40.10.100-hwl
 git pull
 else 
-git checkout driver-dev
+git checkout publish-driver-4.40.10.100-hwl
 git pull
 fi
 

@@ -65,10 +65,10 @@ if [ ${appId} != ${kehuAppId} ]
 then 
 echo "替换客户账号和包名"
 ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
-else
-# 如果是或超多，则自动调整git分支
-./fix_branch.sh ${RNPath} ${role}
 fi
+
+# 则自动调整git分支
+./fix_branch.sh ${RNPath} ${role}
 
 ./export_achive.sh ${achive_mode} ${projectName} ${exportAchivePath} ${iosPorjectPath}
 ./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
