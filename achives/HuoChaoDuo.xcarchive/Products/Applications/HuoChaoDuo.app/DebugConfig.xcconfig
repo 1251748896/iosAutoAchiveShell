@@ -1,0 +1,6 @@
+
+#include "CommonConfig.xcconfig"
+
+#include "Pods/Target Support Files/Pods-HuoChaoDuo/Pods-HuoChaoDuo.debug.xcconfig"
+
+CONFIG_FLAG = DEBUG

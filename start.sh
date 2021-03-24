@@ -60,6 +60,8 @@ echo "调整打包配置"
 ./clean_data.sh ${achiveDirPath} ${exportIpaPath}
 echo "清空上次打包文件"
 
+# 则自动调整git分支
+# ./fix_branch.sh ${RNPath} ${role}
 
 if [ ${appId} != ${kehuAppId} ]
 then 
@@ -67,24 +69,9 @@ echo "替换客户账号和包名"
 ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
 fi
 
-# 则自动调整git分支
-./fix_branch.sh ${RNPath} ${role}
 
 ./export_achive.sh ${achive_mode} ${projectName} ${exportAchivePath} ${iosPorjectPath}
 ./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
 
-# 上传ipa
-if [ ${ipaType} == ${appstore} ]
-then 
-echo "appstore-ipa"
-xcrun altool --upload-app -f ${exportIpaPath}/${projectName}.ipa -t iOS --apiKey ${apiKey} --apiIssuer ${apiIssuer} --verbose
-echo '/// 发布ipa包完成 '
-
-elif [ ${ipaType} == ${adhoc} ]
-then
-echo "adhoc-ipa"
-curl -F "file=@${exportIpaPath}/${projectName}.ipa" -F "uKey=26edf7f2ee1b2e7080422e65b3259511" -F "_api_key=371119bdbd9ea4837b59cda3e395ce46" https://qiniu-storage.pgyer.com/apiv1/app/upload
-else
-echo "打包类型错误"
-fi
+./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer}
 

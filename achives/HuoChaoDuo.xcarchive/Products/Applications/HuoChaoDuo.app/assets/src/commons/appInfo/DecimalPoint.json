@@ -1,0 +1,46 @@
+{
+    "rule": {
+        "zeroNumber": "/^[0-9]*[1-9][0-9]*$/",
+        "oneNumber": "/^[0-9]+([.]{1}[0-9]{0,1})?$/",
+        "twoNumber": "/^[0-9]+([.]{1}[0-9]{0,2})?$/",
+        "threeNumber": "/^[0-9]+([.]{1}[0-9]{0,3})?$/",
+        "fourNumber": "/^[0-9]+([.]{1}[0-9]{0,4})?$/"
+    },
+    "formatList": [
+        {
+            "key": "TonKeepNum",
+            "value": "4",
+            "name": "吨数类型"
+        },
+        {
+            "key": "KmKeepNum",
+            "value": "2",
+            "name": "公里类型"
+        },
+        {
+            "key": "AmountKeepNum",
+            "value": "0",
+            "name": "数量类型"
+        },
+        {
+            "key": "MoneyKeepNum",
+            "value": "2",
+            "name": "金额类型"
+        },
+        {
+            "key": "MeterKeepNum",
+            "value": "2",
+            "name": "长度类型"
+        },
+        {
+            "key": "RateKeepNum",
+            "value": "4",
+            "name": "比率类型"
+        },
+        {
+            "key": "PercentKeepNum",
+            "value": "2",
+            "name": "百分数类型"
+        }
+    ]
+}
