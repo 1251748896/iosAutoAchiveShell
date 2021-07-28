@@ -9,21 +9,13 @@ ipaType=$4
 apiKey=$5
 apiIssuer=$6
 
+defaultrole=$7
+
 appstore="1"
 adhoc="2"
 
 achive_mode=Release
 ipa_mode=Debug
-
-defaultrole="hcddriver"
-
-if [ ${role} == "" ]
-then
-echo "打包司机端"
-role=${defaultrole} 
-else 
-echo "打包物流端"
-fi
 
 projectName=""
 if [ ${role} == ${defaultrole} ]
@@ -33,7 +25,7 @@ else
 projectName="LogisticsOwner"
 fi
 
-
+echo ${projectName}
 
 if [ ${ipaType} == ${appstore} ]
 then ipa_mode=Release
@@ -48,7 +40,7 @@ teamId="9SX98DB3MS"
 
 # 脚本文件夹（ios_auto_achive）和RN代码文件夹（app），最好在平级目录（在同一个文件夹当中）
 
-desktopPath="/Users/jiangbo/Desktop"
+desktopPath="/Users/kuotian/Desktop"
 ios_auto_achive="${desktopPath}/打包脚本/ios_auto_achive"
 
 projectPath=""
@@ -80,12 +72,12 @@ exportOptionsConfig="${ios_auto_achive}/exportOption/${ExportOptionsPath}/Export
 
 # 调整打包配置文件
 echo "开始: 调整打包配置"
-./fix_export_option.sh ${kehuTeamId}
+# ./fix_export_option.sh ${kehuTeamId}
 echo "调整打包配置---------完成"
 
 # 清空achives和ipas
 echo "开始: 清空上次打包文件"
-./clean_data.sh ${achiveDirPath} ${exportIpaPath}
+# ./clean_data.sh ${achiveDirPath} ${exportIpaPath}
 echo "清空上次打包文件---------完成"
 
 # 则自动调整git分支
@@ -94,15 +86,18 @@ echo "检查: 替换客户账号和包名"
 if [ ${appId} != ${kehuAppId} ]
 then 
 echo "正在替换客户账号和包名..."
-./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
+# ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
 fi
 echo "替换客户账号和包名---------完成"
 
 echo "开始: export_achive"
-./export_achive.sh ${achive_mode} ${projectName} ${exportAchivePath} ${iosPorjectPath}
+# ./export_achive.sh ${achive_mode} ${projectName} ${exportAchivePath} ${iosPorjectPath}
 echo "export_achiveq---------完成"
 echo "开始: export_ipa"
-./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
+# ./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
 echo "export_ipa---------完成"
 # ./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer}
-
+echo "以下是appid"
+echo ${ipaType}
+echo "以上是appid"
+./uploadToFir.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer} ${appId}

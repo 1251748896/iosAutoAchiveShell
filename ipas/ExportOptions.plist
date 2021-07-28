@@ -4,8 +4,6 @@
 <dict>
 	<key>compileBitcode</key>
 	<false/>
-	<key>iCloudContainerEnvironment</key>
-	<string>Production</string>
 	<key>method</key>
 	<string>ad-hoc</string>
 	<key>signingStyle</key>
@@ -13,7 +11,7 @@
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
-	<string>6PU7HJG232</string>
+	<string>9SX98DB3MS</string>
 	<key>thinning</key>
 	<string>&lt;none&gt;</string>
 </dict>
