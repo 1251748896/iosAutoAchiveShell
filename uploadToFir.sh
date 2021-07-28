@@ -13,9 +13,31 @@ appId=$8
 
 
 echo "开始请求1"
-echo ${appId}
-echo "开始请求2"
-token="d345ce58e8850e4412a7f8b9b23d60a3"
-p="type=ios＆bundle_id=${appId}＆api_token=${token}"
-data=`curl -d ${p} "http://api.bq04.com/apps"`
-echo ${data}
+# echo ${appId}
+# echo "开始请求2"
+# token="d345ce58e8850e4412a7f8b9b23d60a3"
+# p="type=ios＆bundle_id=${appId}＆api_token=${token}"
+# data=`curl -d ${p} "http://api.bq04.com/apps"`
+# echo ${data}
+
+uploadKey=""
+uploadToken=""
+
+if [ ${appId} == "com.huochaoduo.hcdlogistics" ]
+then
+projectName="Huochaoduo"
+uploadKey="b7dd9ddd1b30f39f4e285cc5700b5fbfcce79d72"
+uploadToken="_Vr9k9CbrqN6dKAd18Ezner7W9yR86vNze9XcT9h:nW4XXCCVbJ-hsqEbX2cEWLxZx2Y=:eyJzY29wZSI6ImZpcmljb246NDU0OTc5MTk5YjRkMTBjY2FhZmExM2I1N2RlMWJlMTI5NGNhNmVhYyIsImNhbGxiYWNrVXJsIjoiaHR0cDovL2FwaS5qYXBwc3RvcmUuY29tL2F1dGgvcWluaXUvY2FsbGJhY2s_cGFyZW50X2lkPTYwOTRmNDViZjk0NTQ4NTc5NzJlNTJlMFx1MDAyNnRpbWVzdGFtcD0xNjI3NDU3ODAxXHUwMDI2c2lnbj1lYzJjM1x1MDAyNm9yaWdpbmFsX2tleT04NzlmM2RiNjExMmIyMzAzNDRhNGYyNDc0ZjY3MjBmZGZiZjc0NmFlIiwiY2FsbGJhY2tCb2R5Ijoia2V5PSQoa2V5KVx1MDAyNmV0YWc9JChldGFnKVx1MDAyNmZzaXplPSQoZnNpemUpXHUwMDI2Zm5hbWU9JChmbmFtZSlcdTAwMjZvcmlnaW49JCh4Om9yaWdpbilcdTAwMjZpc19jb252ZXJ0ZWQ9JCh4OmlzX2NvbnZlcnRlZCkiLCJkZWFkbGluZSI6MTYyNzQ1ODQwMSwidXBob3N0cyI6WyJodHRwOi8vdXAucWluaXUuY29tIiwiaHR0cDovL3VwbG9hZC5xaW5pdS5jb20iLCItSCB1cC5xaW5pdS5jb20gaHR0cDovLzE4My4xMzEuNy4zIl0sImdsb2JhbCI6ZmFsc2V9"
+else 
+uploadKey="599f74d1c91e438aab83d1003104c4fa7b993dc5"
+uploadToken="_Vr9k9CbrqN6dKAd18Ezner7W9yR86vNze9XcT9h:grxOVnjGgS_gVISrWkb_E728z3I=:eyJzY29wZSI6InByby1hcHA6NTk5Zjc0ZDFjOTFlNDM4YWFiODNkMTAwMzEwNGM0ZmE3Yjk5M2RjNSIsImNhbGxiYWNrVXJsIjoiaHR0cDovL2FwaS5qYXBwc3RvcmUuY29tL2F1dGgvcWluaXUvY2FsbGJhY2s_cGFyZW50X2lkPTYwODkyOGY4YjJlYjQ2MTYzMjkwZjUwZFx1MDAyNnRpbWVzdGFtcD0xNjI3NDU4MzQ0XHUwMDI2c2lnbj02M2U4Nlx1MDAyNnVzZXJfaWQ9NTczNThkMGIwMGZjNzQyODQ5MDAwMDBlIiwiY2FsbGJhY2tCb2R5Ijoia2V5PSQoa2V5KVx1MDAyNmV0YWc9JChldGFnKVx1MDAyNmZzaXplPSQoZnNpemUpXHUwMDI2Zm5hbWU9JChmbmFtZSlcdTAwMjZvcmlnaW49JCh4Om9yaWdpbilcdTAwMjZuYW1lPSQoeDpuYW1lKVx1MDAyNmJ1aWxkPSQoeDpidWlsZClcdTAwMjZ2ZXJzaW9uPSQoeDp2ZXJzaW9uKVx1MDAyNmlzX3VzZV9tcWM9JCh4OmlzX3VzZV9tcWMpXHUwMDI2Y2hhbmdlbG9nPSQoeDpjaGFuZ2Vsb2cpXHUwMDI2cmVsZWFzZV90eXBlPSQoeDpyZWxlYXNlX3R5cGUpXHUwMDI2ZGlzdHJpYnV0aW9uX25hbWU9JCh4OmRpc3RyaWJ1dGlvbl9uYW1lKVx1MDAyNnN1cHBvcnRlZF9wbGF0Zm9ybT0kKHg6c3VwcG9ydGVkX3BsYXRmb3JtKVx1MDAyNm1pbmltdW1fb3NfdmVyc2lvbj0kKHg6bWluaW11bV9vc192ZXJzaW9uKVx1MDAyNnVpX3JlcXVpcmVkX2RldmljZV9jYXBhYmlsaXRpZXM9JCh4OnVpX3JlcXVpcmVkX2RldmljZV9jYXBhYmlsaXRpZXMpXHUwMDI2dWlfZGV2aWNlX2ZhbWlseT0kKHg6dWlfZGV2aWNlX2ZhbWlseSkiLCJkZWFkbGluZSI6MTYyNzQ2MTk0NCwidXBob3N0cyI6WyJodHRwOi8vdXAucWluaXUuY29tIiwiaHR0cDovL3VwbG9hZC5xaW5pdS5jb20iLCItSCB1cC5xaW5pdS5jb20gaHR0cDovLzE4My4xMzEuNy4zIl0sImdsb2JhbCI6ZmFsc2V9"
+fi
+
+ipaPath="${exportIpaPath}/${projectName}.ipa"
+
+echo ${ipaPath}
+
+curl   -F "key=${uploadKey}"              \
+       -F "token=${uploadToken}"             \
+       -F "file=@${ipaPath}"            \
+       https://up.qbox.me
