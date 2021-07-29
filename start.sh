@@ -86,7 +86,7 @@ echo "检查: 替换客户账号和包名"
 if [ ${appId} != ${kehuAppId} ]
 then 
 echo "正在替换客户账号和包名..."
-# ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
+./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${iosPorjectPath}
 fi
 echo "替换客户账号和包名---------完成"
 
@@ -96,6 +96,6 @@ echo "export_achiveq---------完成"
 echo "开始: export_ipa"
 ./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
 echo "export_ipa---------完成"
-# ./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer}
+./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer}
 
 ./uploadToFir.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer} ${appId}
