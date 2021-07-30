@@ -54,6 +54,18 @@ echo '{
     "code": 100020
 }' |  jq .errors.exception[0]
 
+
+
+data='{
+    "errors": {
+        "exception": [
+               "姜波"
+        ]
+    },
+    "code": 100020
+}'
+data1=`echo ${data} | jq .code`
+echo ${data1} 
 # data<空格>|<空格>jq<空格>.字段
 
 # print : 姜波

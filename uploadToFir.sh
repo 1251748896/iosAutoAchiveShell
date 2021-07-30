@@ -11,14 +11,18 @@ apiIssuer=$7
 
 appId=$8
 
+binary=`curl -d 'type=ios' -d 'bundle_id=${appId}' -d 'api_token=cc578c30bc0a0c76a3ff3942bcc5e77c' "http://api.bq04.com/apps" | jq .cert.binary`
+echo "binary = ${binary}"
 
-token="cc578c30bc0a0c76a3ff3942bcc5e77c"
-p="type=ios＆bundle_id=${appId}＆api_token=${token}"
-data=`curl -d ${p} "http://api.bq04.com/apps"`
-echo ${data}
+uploadKey=`echo ${binary} | jq .key`
+uploadToken=`echo ${binary} | jq .token`
 
-uploadKey=data | jq .cert.binary.key
-uploadToken=data | jq .cert.binary.token
+echo "uploadKey = ${uploadKey}"
+if [ ! -n "$uploadKey" ]; then 
+echo "uploadKey\token获取-----失败"
+else 
+echo "上传信息获取-----成功"
+fi 
 
 if [ ${appId} == "com.huochaoduo.hcdlogistics" ]
 then
@@ -32,4 +36,6 @@ echo ${ipaPath}
 curl   -F "key=${uploadKey}"              \
        -F "token=${uploadToken}"             \
        -F "file=@${ipaPath}"            \
-       https://up.qbox.me
+       https://up.qbox.me  | jq .is_completed
+
+
