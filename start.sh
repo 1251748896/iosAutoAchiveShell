@@ -96,6 +96,6 @@ echo "export_achiveq---------完成"
 echo "开始: export_ipa"
 ./export_ipa.sh ${ipa_mode} ${exportAchivePath} ${exportIpaPath} ${exportOptionsConfig}
 echo "export_ipa---------完成"
-./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer}
+./upload.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer} ${appId}
 
-./uploadToFir.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer} ${appId}
+# ./uploadToFir.sh ${ipaType} ${appstore} ${adhoc} ${exportIpaPath} ${projectName} ${apiKey} ${apiIssuer} ${appId}

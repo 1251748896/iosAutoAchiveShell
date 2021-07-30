@@ -9,6 +9,12 @@ projectName=$5
 apiKey=$6
 apiIssuer=$7
 
+appId=$8
+if [ ${appId} == "com.huochaoduo.hcdlogistics" ]
+then
+projectName="Huochaoduo"
+fi
+
 # 上传ipa
 if [ ${ipaType} == ${appstore} ]
 then 
@@ -19,7 +25,7 @@ echo '/// 发布ipa包完成 '
 elif [ ${ipaType} == ${adhoc} ]
 then
 echo "adhoc-ipa"
-curl -F "file=@${exportIpaPath}/${projectName}.ipa" -F "uKey=26edf7f2ee1b2e7080422e65b3259511" -F "_api_key=371119bdbd9ea4837b59cda3e395ce46" https://qiniu-storage.pgyer.com/apiv1/app/upload
+curl -F "file=@${exportIpaPath}/${projectName}.ipa" -F "uKey=f4882b1a94993b343698a4d8fc235522" -F "_api_key=209e15f7238c3a930516f343d0298e1c" https://upload.pgyer.com/apiv1/app/upload
 else
 echo "打包类型错误"
 fi
