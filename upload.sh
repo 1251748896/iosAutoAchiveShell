@@ -25,7 +25,7 @@ echo '/// 发布ipa包完成 '
 elif [ ${ipaType} == ${adhoc} ]
 then
 echo "adhoc-ipa"
-curl -F "file=@${exportIpaPath}/${projectName}.ipa" -F "uKey=f4882b1a94993b343698a4d8fc235522" -F "_api_key=209e15f7238c3a930516f343d0298e1c" https://upload.pgyer.com/apiv1/app/upload
+curl -F "file=@${exportIpaPath}/${projectName}.ipa" -F "uKey=4905f558df594d53597768aa52ef5863" -F "_api_key=4f7c1b7b4a0d5a89c3187cf794581b03" https://upload.pgyer.com/apiv1/app/upload
 else
 echo "打包类型错误"
 fi
