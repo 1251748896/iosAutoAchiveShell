@@ -33,9 +33,11 @@ ios_auto_achive="${desktopPath}/打包脚本/ios_auto_achive"
 projectPath=""
 if [ ${role} == ${defaultrole} ]
 then
-projectPath="${desktopPath}/app/ios"
+# 司机代码路径
+projectPath="${desktopPath}/app_driver/app/ios" 
 else 
-projectPath="${desktopPath}/app/ios"
+# 货主代码路径
+projectPath="${desktopPath}/app_shipper/app/ios"
 fi
 
 # achive的路径

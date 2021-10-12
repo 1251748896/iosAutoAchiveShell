@@ -21,11 +21,13 @@ echo "按参数打包: ${role}"
 fi 
 
 
-if [ ${role} == ${defaultrole} ]
-then ./start.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
-else 
 ./flutter.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
-fi
+
+# if [ ${role} == ${defaultrole} ]
+# then ./start.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
+# else 
+# ./flutter.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
+# fi
 
 
 # 货超多司机

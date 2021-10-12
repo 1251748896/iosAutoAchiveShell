@@ -3,9 +3,18 @@
 iosPorjectPath=$4
 cd $iosPorjectPath
 
+pwd
+
 cd ..
 git pull
-cd $iosPorjectPath
+
+flutter clean
+
+flutter pub get
+
+cd ios
+
+pod install
 
 
 development_mode=$1
@@ -13,9 +22,9 @@ projectName=$2
 exportAchivePath=$3
 
 # 清理工程
-echo '/// 开始清理'
-xcodebuild clean -configuration ${development_mode} -quiet  || exit
-echo '/// 清理完成'
+# echo '/// 开始清理'
+# xcodebuild clean -configuration ${development_mode} -quiet  || exit
+# echo '/// 清理完成'
 # 生成archive
 xcodebuild \
 archive -workspace ${projectName}.xcworkspace \
