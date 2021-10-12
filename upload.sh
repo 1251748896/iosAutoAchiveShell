@@ -12,7 +12,7 @@ apiIssuer=$7
 appId=$8
 if [ ${appId} == "com.huochaoduo.hcdlogistics" ]
 then
-projectName="Huochaoduo"
+projectName="logistics"
 fi
 
 # 上传ipa

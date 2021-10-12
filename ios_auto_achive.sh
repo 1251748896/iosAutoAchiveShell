@@ -20,9 +20,25 @@ else
 echo "按参数打包: ${role}"
 fi 
 
-./start.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
 
-# ./start.sh ${kehudomain} "driver" ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer}
+if [ ${role} == ${defaultrole} ]
+then ./start.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
+else 
+./flutter.sh ${kehudomain} ${role} ${kehuTeamId} ${ipaType} ${apiKey} ${apiIssuer} ${defaultrole}
+fi
+
+
+# 货超多司机
+
+# 胡阔天
+# 阔天科技有限公司
+# +8615982285748
+# 1251748896@qq.com
+
+
+# 我们2021年2月28日,取得了《货超多》商标权,共包含88个使用商品和服务项目.
+# 目前,app已经开发完成,app名字却被占用,希望拿回“货超多司机”这个名字的使用权.
+
 
 
 

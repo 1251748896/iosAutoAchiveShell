@@ -48,7 +48,7 @@ if [ ${role} == ${defaultrole} ]
 then
 projectPath="${desktopPath}/driver_ios/LogisticsDriver"
 else 
-projectPath="${desktopPath}/logistics_ios/LogisticsOwner"
+projectPath="${desktopPath}/app/ios"
 fi
 
 # ios工程目录
@@ -70,7 +70,7 @@ fi
 
 exportOptionsConfig="${ios_auto_achive}/exportOption/${ExportOptionsPath}/ExportOptions.plist"
 
-# 调整打包配置文件
+# 调整打包配置文件(.plist文件)
 echo "开始: 调整打包配置"
 ./fix_export_option.sh ${kehuTeamId}
 echo "调整打包配置---------完成"
