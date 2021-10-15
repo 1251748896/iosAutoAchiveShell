@@ -34,10 +34,10 @@ projectPath=""
 if [ ${role} == ${defaultrole} ]
 then
 # 司机代码路径
-projectPath="${desktopPath}/app_driver/app/ios" 
+projectPath="${desktopPath}/app_driver/ios" 
 else 
 # 货主代码路径
-projectPath="${desktopPath}/app_shipper/app/ios"
+projectPath="${desktopPath}/app_shipper/ios"
 fi
 
 # achive的路径
