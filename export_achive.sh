@@ -5,15 +5,21 @@ cd $iosPorjectPath
 
 pwd
 
+# 更新 hcdmodule
 cd ..
+cd hcdmodule
 git pull
-
-flutter clean
-
 flutter pub get
 
-cd ios
+# 更新司机(货主)端 代码
+cd ..
 
+git pull
+flutter clean
+flutter pub get
+
+# 刷新 pod 
+cd ios
 pod install
 
 

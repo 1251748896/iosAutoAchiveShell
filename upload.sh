@@ -18,7 +18,7 @@ echo $ipaPath
 if [ ${ipaType} == ${appstore} ]
 then 
 echo "appstore-ipa"
-xcrun altool --upload-app -f ipaPath -t iOS --apiKey ${apiKey} --apiIssuer ${apiIssuer} --verbose
+xcrun altool --upload-app -f $ipaPath -t iOS --apiKey ${apiKey} --apiIssuer ${apiIssuer} --verbose
 echo '/// 发布ipa包完成 '
 
 elif [ ${ipaType} == ${adhoc} ]

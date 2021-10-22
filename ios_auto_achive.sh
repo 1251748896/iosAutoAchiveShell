@@ -8,6 +8,7 @@ apiKey="T84F3MJX42"
 apiIssuer="cf484402-b74b-424e-90a6-8cbd83faa6bd"
 
 # ipaType(打包类型): 1: appstore; 2: adhoc
+
 ipaType="2"
 
 defaultrole="hcddriver"
