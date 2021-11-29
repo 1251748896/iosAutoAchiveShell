@@ -11,7 +11,6 @@ apiIssuer=$7
 
 ipaPath=${exportIpaPath}/logistics.ipa
 
-echo "ddd"
 echo $ipaPath
 
 # 上传ipa
