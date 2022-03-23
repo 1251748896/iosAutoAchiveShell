@@ -34,10 +34,10 @@ projectPath=""
 if [ ${role} == ${defaultrole} ]
 then
 # 司机代码路径
-projectPath="${desktopPath}/app_driver/ios" 
+projectPath="${desktopPath}/driver_app/ios" 
 else 
 # 货主代码路径
-projectPath="${desktopPath}/app_shipper/ios"
+projectPath="${desktopPath}/logistics_app/ios"
 fi
 
 # achive的路径
@@ -65,9 +65,11 @@ echo "清空上次打包文件---------完成"
 echo "检查: 替换客户账号和包名"
 if [ ${appId} != ${kehuAppId} ]
 then 
-echo "正在替换客户账号和包名..."
-./fix_export_option.sh ${kehuTeamId}
-./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${projectPath}
+  echo "正在替换客户账号和包名..."
+# ./fix_export_option.sh ${kehuTeamId}
+# ./replace_info.sh ${appId} ${kehuAppId} ${teamId} ${kehuTeamId} ${projectPath}
+else
+  echo "不需要替换资料..."
 fi
 echo "替换客户账号和包名---------完成"
 

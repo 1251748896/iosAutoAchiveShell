@@ -9,18 +9,18 @@ pwd
 cd ..
 cd hcdmodule
 git pull
-flutter pub get
+# flutter pub get
 
 # 更新司机(货主)端 代码
 cd ..
 
 git pull
-flutter clean
-flutter pub get
+# flutter clean
+# flutter pub get
 
 # 刷新 pod 
 cd ios
-pod install
+# pod install
 
 
 development_mode=$1

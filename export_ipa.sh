@@ -12,4 +12,3 @@ xcodebuild -exportArchive -archivePath ${archivePath} \
 -exportOptionsPlist ${exportOptionsConfig} \
 -quiet || exit
 echo '/// ipa包已导出'
-
